@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity
-data class DownloadLinkAndFile (
+data class DownloadLinkAndFile(
     @PrimaryKey var id: Long = 0,
     var link: String? = null,
     var file: String? = null,

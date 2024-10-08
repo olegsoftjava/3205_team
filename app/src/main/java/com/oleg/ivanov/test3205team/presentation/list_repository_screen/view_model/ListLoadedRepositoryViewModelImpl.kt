@@ -3,7 +3,6 @@ package com.oleg.ivanov.test3205team.presentation.list_repository_screen.view_mo
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.oleg.ivanov.test3205team.repository.database.DatabaseProvider
-import com.oleg.ivanov.test3205team.repository.provider.ProviderDownloader
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow

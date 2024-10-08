@@ -104,7 +104,9 @@ class FileDownloader(
                                 downloadLinkAndFile.error = false
                                 downloadLinkAndFile.comleted = true
 
-                                providerDownloader.sendUrlLoadedCompleted(downloadLinkAndFile.link?:"")
+                                providerDownloader.sendUrlLoadedCompleted(
+                                    downloadLinkAndFile.link ?: ""
+                                )
 
                                 databaseProvider.downloadLinkAndFileAppDao()
                                     .update(downloadLinkAndFile)

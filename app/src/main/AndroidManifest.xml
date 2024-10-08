@@ -19,7 +19,8 @@
             android:name=".presentation.splash_screen.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme"
-            tools:ignore="LockedOrientationActivity">
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,11 +30,13 @@
 
         <activity
             android:name=".presentation.search_screen.SearchActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".presentation.list_repository_screen.ListDownloadRepositoryBindingActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

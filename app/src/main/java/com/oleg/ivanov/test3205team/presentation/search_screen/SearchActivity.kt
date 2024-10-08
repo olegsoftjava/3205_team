@@ -1,19 +1,24 @@
 package com.oleg.ivanov.test3205team.presentation.search_screen
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isInvisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.oleg.ivanov.test3205team.R
 import com.oleg.ivanov.test3205team.app.AppSettings
 import com.oleg.ivanov.test3205team.app.MyApplication
 import com.oleg.ivanov.test3205team.databinding.ActivitySearchBinding
 import com.oleg.ivanov.test3205team.presentation.adapters.RepositoryListAdapter
 import com.oleg.ivanov.test3205team.presentation.base.BaseActivity
 import com.oleg.ivanov.test3205team.presentation.ext_ui.animateLeftRight
+import com.oleg.ivanov.test3205team.presentation.ext_ui.animateSpeedWayFromDownToUp
+import com.oleg.ivanov.test3205team.presentation.ext_ui.animateSpeedWayFromRightToLeft
 import com.oleg.ivanov.test3205team.presentation.ext_ui.hideKeyboard
 import com.oleg.ivanov.test3205team.presentation.list_repository_screen.ListDownloadRepositoryBindingActivity
 import com.oleg.ivanov.test3205team.presentation.search_screen.view_model.SearchViewModelImpl
@@ -48,7 +53,12 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding
 
         initClickListener()
 
-        binding.editTextUserName.setText("tjbck")
+        binding.buttonSearch.animateSpeedWayFromRightToLeft()
+        binding.textUserNameInputLayout.animateSpeedWayFromDownToUp()
+
+        showOkDialog(this,
+            getString(R.string.info), getString(R.string.info_description))
+
     }
 
     private fun initRecyclerView() {
@@ -116,11 +126,28 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding
 
     private fun initClickListener() {
         binding.buttonSearch.setOnClickListener {
-            searchViewModel.search(binding.editTextUserName.text.toString())
+            if(binding.editTextUserName.text?.isEmpty()==true) {
+                binding.textUserNameInputLayout.animateLeftRight()
+            } else {
+                searchViewModel.search(binding.editTextUserName.text.toString())
+            }
         }
 
         binding.buttonOpenFileDownload.setOnClickListener {
             startActivity(Intent(this@SearchActivity, ListDownloadRepositoryBindingActivity::class.java))
         }
+    }
+
+    private fun showOkDialog(context: Context, title: String, message: String) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle(title)
+        builder.setMessage(message)
+
+        builder.setPositiveButton("OK") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }

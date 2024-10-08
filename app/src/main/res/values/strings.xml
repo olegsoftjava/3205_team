@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Test3205Team</string>
+    <string name="Loaded">Загруженные</string>
+    <string name="search_in_repo">Поиск репозиториев</string>
+    <string name="enter_user_name">Введите имя пользователя</string>
+    <string name="search">Поиск</string>
+    <string name="list_loaded_files">Список загруженных файлов</string>
+    <string name="info">Инфо</string>
+    <string name="info_description">Добрый день! \n\nСделал загрузку через downloadManager, animation, Dagger2, Retrofit, MVVM, Coroutine, Flow... \n\nЯ не делал обработку загрузки в фоне, проверку файлов на девайсе, не делал интерсептер для чтения ошибок сети и проброски их на все экраны, pagination, извините, но это очень накладно для тестового.\n\nС уважением, Олег Иванов</string>
 </resources>
