@@ -18,6 +18,7 @@ annotation class ApplicationScope
         RetrofitModule::class,
         ViewModelModule::class,
         ProviderModule::class,
+        UseCaseModule::class,
     ]
 )
 interface ApplicationComponent {

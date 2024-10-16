@@ -1,7 +1,7 @@
 package com.oleg.ivanov.test3205team.repository.git_hub_repo
 
 import com.oleg.ivanov.test3205team.network.GitHubApiService
-import com.oleg.ivanov.test3205team.repository.model.GitHubRepoModel
+import com.oleg.ivanov.test3205team.domain.data.GitHubRepoModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

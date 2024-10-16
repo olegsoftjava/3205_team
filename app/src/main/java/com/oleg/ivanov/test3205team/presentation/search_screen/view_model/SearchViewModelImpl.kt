@@ -4,8 +4,9 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.oleg.ivanov.test3205team.app.AppSettings
+import com.oleg.ivanov.test3205team.domain.repository.RepositoryData
+import com.oleg.ivanov.test3205team.domain.usecase.RepositoryUseCase
 import com.oleg.ivanov.test3205team.repository.database.DatabaseProvider
-import com.oleg.ivanov.test3205team.repository.git_hub_repo.GitHubRepoClient
 import com.oleg.ivanov.test3205team.repository.model.ErrorModel
 import com.oleg.ivanov.test3205team.repository.provider.ProviderDownloader
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +17,7 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class SearchViewModelImpl @Inject constructor(
-    private val gitHubRepoClient: GitHubRepoClient,
+    private val repositoryUseCase: RepositoryUseCase,
     private val databaseProvider: DatabaseProvider,
     private val providerDownloader: ProviderDownloader
 ) : ViewModel(), SearchViewModel {
@@ -35,7 +36,7 @@ class SearchViewModelImpl @Inject constructor(
     override fun search(userName: String) {
         viewModelScope.launch {
             _viewState.emit(SearchViewState.SearchStartLoad)
-            val resultSearch = gitHubRepoClient.getUserRepositories(userName)
+            val resultSearch = repositoryUseCase.execute(userName)
             Log.i("SearchViewModelImpl", "resultSearch = $resultSearch")
             if (resultSearch.isNullOrEmpty()) {
                 /**

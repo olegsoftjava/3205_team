@@ -8,7 +8,7 @@ import com.oleg.ivanov.test3205team.R
 import com.oleg.ivanov.test3205team.app.AppSettings
 import com.oleg.ivanov.test3205team.databinding.ItemRepositoryBinding
 import com.oleg.ivanov.test3205team.presentation.ext_ui.animateUpDown
-import com.oleg.ivanov.test3205team.repository.model.GitHubRepoModel
+import com.oleg.ivanov.test3205team.domain.data.GitHubRepoModel
 
 class RepositoryListAdapter(
     private val dataSource: List<GitHubRepoModel>,

@@ -1,4 +1,4 @@
-package com.oleg.ivanov.test3205team.repository.model
+package com.oleg.ivanov.test3205team.domain.data
 
 import com.google.gson.annotations.SerializedName
 

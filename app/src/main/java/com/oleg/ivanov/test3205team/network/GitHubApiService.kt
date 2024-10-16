@@ -1,6 +1,6 @@
 package com.oleg.ivanov.test3205team.network
 
-import com.oleg.ivanov.test3205team.repository.model.GitHubRepoModel
+import com.oleg.ivanov.test3205team.domain.data.GitHubRepoModel
 import retrofit2.http.GET
 import retrofit2.http.Path
 

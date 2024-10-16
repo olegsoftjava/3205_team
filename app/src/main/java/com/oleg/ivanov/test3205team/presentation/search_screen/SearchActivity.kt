@@ -23,7 +23,7 @@ import com.oleg.ivanov.test3205team.presentation.ext_ui.hideKeyboard
 import com.oleg.ivanov.test3205team.presentation.list_repository_screen.ListDownloadRepositoryBindingActivity
 import com.oleg.ivanov.test3205team.presentation.search_screen.view_model.SearchViewModelImpl
 import com.oleg.ivanov.test3205team.presentation.search_screen.view_model.SearchViewState
-import com.oleg.ivanov.test3205team.repository.model.GitHubRepoModel
+import com.oleg.ivanov.test3205team.domain.data.GitHubRepoModel
 import com.oleg.ivanov.test3205team.util.FileDownloader
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

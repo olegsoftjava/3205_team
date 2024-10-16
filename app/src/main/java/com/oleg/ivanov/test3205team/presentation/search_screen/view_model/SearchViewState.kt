@@ -1,7 +1,7 @@
 package com.oleg.ivanov.test3205team.presentation.search_screen.view_model
 
 import com.oleg.ivanov.test3205team.repository.model.ErrorModel
-import com.oleg.ivanov.test3205team.repository.model.GitHubRepoModel
+import com.oleg.ivanov.test3205team.domain.data.GitHubRepoModel
 
 sealed class SearchViewState {
     internal data class DownloadData(val link: String?) : SearchViewState()
