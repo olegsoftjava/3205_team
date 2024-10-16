@@ -1,8 +1,8 @@
 package com.oleg.ivanov.test3205team.di
 
 import android.content.Context
-import com.oleg.ivanov.test3205team.repository.database.AppRoomDatabase
-import com.oleg.ivanov.test3205team.repository.database.DatabaseProvider
+import com.oleg.ivanov.data.repository.database.AppRoomDatabase
+import com.oleg.ivanov.data.repository.database.DatabaseProvider
 import dagger.Module
 import dagger.Provides
 
@@ -13,10 +13,11 @@ class RoomModule(private val context: Context) {
 
     @ApplicationScope
     @Provides
-    fun appDatabase() = AppRoomDatabase.getDataBase(context)
+    fun appDatabase() = com.oleg.ivanov.data.repository.database.AppRoomDatabase.getDataBase(context)
 
     @ApplicationScope
     @Provides
-    fun databaseProvider() = DatabaseProvider(appDatabase())
+    fun databaseProvider() =
+        com.oleg.ivanov.data.repository.database.DatabaseProvider(appDatabase())
 
 }

@@ -8,11 +8,11 @@ import com.oleg.ivanov.test3205team.R
 import com.oleg.ivanov.test3205team.app.AppSettings
 import com.oleg.ivanov.test3205team.databinding.ItemRepositoryBinding
 import com.oleg.ivanov.test3205team.presentation.ext_ui.animateUpDown
-import com.oleg.ivanov.test3205team.domain.data.GitHubRepoModel
+import com.oleg.ivanov.domain.domain.data.GitHubRepoModel
 
 class RepositoryListAdapter(
-    private val dataSource: List<GitHubRepoModel>,
-    private val click: (gitHubRepoModel: GitHubRepoModel) -> Unit
+    private val dataSource: List<com.oleg.ivanov.domain.domain.data.GitHubRepoModel>,
+    private val click: (gitHubRepoModel: com.oleg.ivanov.domain.domain.data.GitHubRepoModel) -> Unit
 ) : RecyclerView.Adapter<RepositoryListAdapter.MessageViewHolder>() {
 
     private var linkList: MutableList<String>? = null

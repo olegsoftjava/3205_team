@@ -9,9 +9,6 @@ import android.net.Uri
 import android.os.Environment
 import android.util.Log
 import com.oleg.ivanov.test3205team.app.MyApplication
-import com.oleg.ivanov.test3205team.domain.data.DownloadLinkAndFile
-import com.oleg.ivanov.test3205team.repository.database.DatabaseProvider
-import com.oleg.ivanov.test3205team.repository.provider.ProviderDownloader
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -29,10 +26,10 @@ class FileDownloader(
 ) {
 
     @Inject
-    lateinit var databaseProvider: DatabaseProvider
+    lateinit var databaseProvider: com.oleg.ivanov.data.repository.database.DatabaseProvider
 
     @Inject
-    lateinit var providerDownloader: ProviderDownloader
+    lateinit var providerDownloader: com.oleg.ivanov.data.repository.provider.ProviderDownloader
 
     private val downloadManager =
         activity.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
@@ -56,7 +53,7 @@ class FileDownloader(
             val downloadId = downloadManager.enqueue(request)
 
             databaseProvider.downloadLinkAndFileAppDao().insert(
-                DownloadLinkAndFile(
+                com.oleg.ivanov.domain.domain.data.DownloadLinkAndFileDomain(
                     Date().time,
                     link = uri,
                     file = fileName,

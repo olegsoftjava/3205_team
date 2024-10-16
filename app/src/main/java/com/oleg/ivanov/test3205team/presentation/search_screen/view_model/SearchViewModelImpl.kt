@@ -2,10 +2,10 @@ package com.oleg.ivanov.test3205team.presentation.search_screen.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.oleg.ivanov.test3205team.domain.data.RepositoryNetworkAndLoadedResultModel
-import com.oleg.ivanov.test3205team.domain.usecase.LoadListRepositoryUseCase
-import com.oleg.ivanov.test3205team.repository.model.ErrorModel
-import com.oleg.ivanov.test3205team.repository.provider.ProviderDownloader
+import com.oleg.ivanov.data.repository.model.ErrorModel
+import com.oleg.ivanov.data.repository.provider.ProviderDownloader
+import com.oleg.ivanov.domain.domain.data.RepositoryNetworkAndLoadedResultModel
+import com.oleg.ivanov.domain.domain.usecase.LoadListRepositoryUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch

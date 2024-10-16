@@ -1,6 +1,6 @@
 package com.oleg.ivanov.test3205team.di
 
-import com.oleg.ivanov.test3205team.repository.provider.ProviderDownloader
+import com.oleg.ivanov.data.repository.provider.ProviderDownloader
 import dagger.Module
 import dagger.Provides
 
@@ -9,7 +9,7 @@ class ProviderModule {
 
     @ApplicationScope
     @Provides
-    fun providerDownloader(): ProviderDownloader {
-        return ProviderDownloader()
+    fun providerDownloader(): com.oleg.ivanov.data.repository.provider.ProviderDownloader {
+        return com.oleg.ivanov.data.repository.provider.ProviderDownloader()
     }
 }

@@ -2,14 +2,14 @@ package com.oleg.ivanov.test3205team.presentation.list_repository_screen.view_mo
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.oleg.ivanov.test3205team.domain.usecase.LoadListDownloadRepositoryUseCase
+import com.oleg.ivanov.domain.domain.usecase.LoadListDownloadRepositoryUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class ListLoadedRepositoryViewModelImpl @Inject constructor(
-    private val loadListDownloadRepositoryUseCase: LoadListDownloadRepositoryUseCase,
+    private val loadListDownloadRepositoryUseCase: com.oleg.ivanov.domain.domain.usecase.LoadListDownloadRepositoryUseCase,
 ) : ViewModel(), ListLoadedRepositoryViewModel {
 
     private val _viewState = MutableSharedFlow<ListLoadedRepositoryViewState>()

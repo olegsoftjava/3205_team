@@ -1,5 +1,6 @@
 package com.oleg.ivanov.test3205team.presentation.search_screen
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -23,7 +24,6 @@ import com.oleg.ivanov.test3205team.presentation.ext_ui.hideKeyboard
 import com.oleg.ivanov.test3205team.presentation.list_repository_screen.ListDownloadRepositoryBindingActivity
 import com.oleg.ivanov.test3205team.presentation.search_screen.view_model.SearchViewModelImpl
 import com.oleg.ivanov.test3205team.presentation.search_screen.view_model.SearchViewState
-import com.oleg.ivanov.test3205team.domain.data.GitHubRepoModel
 import com.oleg.ivanov.test3205team.util.FileDownloader
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,7 +32,7 @@ import javax.inject.Inject
 
 class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding::inflate) {
 
-    private val fileDownloader by lazy { FileDownloader(this, {}, {}, null ) }
+    private val fileDownloader by lazy { FileDownloader(this, {}, {}, null) }
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -56,8 +56,10 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding
         binding.buttonSearch.animateSpeedWayFromRightToLeft()
         binding.textUserNameInputLayout.animateSpeedWayFromDownToUp()
 
-        showOkDialog(this,
-            getString(R.string.info), getString(R.string.info_description))
+        showOkDialog(
+            this,
+            getString(R.string.info), getString(R.string.info_description)
+        )
 
     }
 
@@ -97,7 +99,9 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding
                     is SearchViewState.DownloadData -> {
                         Log.i("TEST_1_1", "===> it.link=${it.link}")
                         it.link?.let { link ->
-                            (binding.recyclerViewResult.adapter as RepositoryListAdapter).addLinkToList(link)
+                            (binding.recyclerViewResult.adapter as RepositoryListAdapter).addLinkToList(
+                                link
+                            )
                         }
                     }
                 }
@@ -105,17 +109,22 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding
         }
     }
 
-    private fun updateRecyclerViewList(list: List<GitHubRepoModel>?, linkList: List<String>?) {
-        binding.recyclerViewResult.adapter = RepositoryListAdapter(dataSource = list ?: emptyList()) {
-            fileDownloader.download(
-                uri = it.htmlUrl+AppSettings.PART_URL_FOR_DOWNLOAD,
-                fileName = it.nameRepository,
-                userName = it.owner.userName,
-                repositoryName = it.nameRepository
-            )
-        }.apply {
-            setLinkList(linkList?: emptyList())
-        }
+    @SuppressLint("NotifyDataSetChanged")
+    private fun updateRecyclerViewList(
+        list: List<com.oleg.ivanov.domain.domain.data.GitHubRepoModel>?,
+        linkList: List<String>?
+    ) {
+        binding.recyclerViewResult.adapter =
+            RepositoryListAdapter(dataSource = list ?: emptyList()) {
+                fileDownloader.download(
+                    uri = it.htmlUrl + AppSettings.PART_URL_FOR_DOWNLOAD,
+                    fileName = it.nameRepository,
+                    userName = it.owner.userName,
+                    repositoryName = it.nameRepository
+                )
+            }.apply {
+                setLinkList(linkList ?: emptyList())
+            }
         binding.recyclerViewResult.adapter?.notifyDataSetChanged()
     }
 
@@ -126,7 +135,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding
 
     private fun initClickListener() {
         binding.buttonSearch.setOnClickListener {
-            if(binding.editTextUserName.text?.isEmpty()==true) {
+            if (binding.editTextUserName.text?.isEmpty() == true) {
                 binding.textUserNameInputLayout.animateLeftRight()
             } else {
                 searchViewModel.search(binding.editTextUserName.text.toString())
@@ -134,7 +143,12 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding
         }
 
         binding.buttonOpenFileDownload.setOnClickListener {
-            startActivity(Intent(this@SearchActivity, ListDownloadRepositoryBindingActivity::class.java))
+            startActivity(
+                Intent(
+                    this@SearchActivity,
+                    ListDownloadRepositoryBindingActivity::class.java
+                )
+            )
         }
     }
 

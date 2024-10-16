@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Test3205Team"
 include(":app")
- 
+include(":data")
+include(":domain")

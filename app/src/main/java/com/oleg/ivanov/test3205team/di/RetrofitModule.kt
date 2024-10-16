@@ -1,7 +1,6 @@
 package com.oleg.ivanov.test3205team.di
 
 import com.oleg.ivanov.test3205team.app.AppSettings
-import com.oleg.ivanov.test3205team.network.GitHubApiService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -38,7 +37,7 @@ class RetrofitModule {
 
     @ApplicationScope
     @Provides
-    fun networkService(retrofit: Retrofit): GitHubApiService =
-        retrofit.create(GitHubApiService::class.java)
+    fun networkService(retrofit: Retrofit): com.oleg.ivanov.data.network.GitHubApiService =
+        retrofit.create(com.oleg.ivanov.data.network.GitHubApiService::class.java)
 
 }
