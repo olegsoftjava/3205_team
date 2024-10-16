@@ -5,10 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.oleg.ivanov.test3205team.R
-import com.oleg.ivanov.test3205team.app.AppSettings
+import com.oleg.ivanov.data.AppSettings
 import com.oleg.ivanov.test3205team.databinding.ItemRepositoryBinding
 import com.oleg.ivanov.test3205team.presentation.ext_ui.animateUpDown
-import com.oleg.ivanov.domain.domain.data.GitHubRepoModel
 
 class RepositoryListAdapter(
     private val dataSource: List<com.oleg.ivanov.domain.domain.data.GitHubRepoModel>,

@@ -1,6 +1,6 @@
-package com.oleg.ivanov.test3205team.di
+package com.oleg.ivanov.data.di
 
-import com.oleg.ivanov.test3205team.app.AppSettings
+import com.oleg.ivanov.data.AppSettings
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

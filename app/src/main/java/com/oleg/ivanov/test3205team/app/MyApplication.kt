@@ -5,7 +5,7 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import com.oleg.ivanov.test3205team.di.AppModule
 import com.oleg.ivanov.test3205team.di.ApplicationComponent
 import com.oleg.ivanov.test3205team.di.DaggerApplicationComponent
-import com.oleg.ivanov.test3205team.di.RoomModule
+import com.oleg.ivanov.data.di.RoomModule
 
 class MyApplication : Application(), DefaultLifecycleObserver {
 

@@ -8,6 +8,7 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Environment
 import android.util.Log
+import com.oleg.ivanov.data.repository.model.DownloadLinkAndFile
 import com.oleg.ivanov.test3205team.app.MyApplication
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -53,7 +54,7 @@ class FileDownloader(
             val downloadId = downloadManager.enqueue(request)
 
             databaseProvider.downloadLinkAndFileAppDao().insert(
-                com.oleg.ivanov.domain.domain.data.DownloadLinkAndFileDomain(
+                DownloadLinkAndFile(
                     Date().time,
                     link = uri,
                     file = fileName,

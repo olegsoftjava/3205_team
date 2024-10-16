@@ -1,4 +1,4 @@
-package com.oleg.ivanov.test3205team.app
+package com.oleg.ivanov.data
 
 object AppSettings {
     /**

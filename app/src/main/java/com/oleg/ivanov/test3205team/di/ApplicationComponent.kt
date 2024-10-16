@@ -1,14 +1,12 @@
 package com.oleg.ivanov.test3205team.di
 
+import com.oleg.ivanov.data.di.ApplicationScope
+import com.oleg.ivanov.data.di.RetrofitModule
+import com.oleg.ivanov.data.di.RoomModule
 import com.oleg.ivanov.test3205team.presentation.list_repository_screen.ListDownloadRepositoryBindingActivity
 import com.oleg.ivanov.test3205team.presentation.search_screen.SearchActivity
 import com.oleg.ivanov.test3205team.util.FileDownloader
 import dagger.Component
-import javax.inject.Scope
-
-@Scope
-@Retention
-annotation class ApplicationScope
 
 @ApplicationScope
 @Component(

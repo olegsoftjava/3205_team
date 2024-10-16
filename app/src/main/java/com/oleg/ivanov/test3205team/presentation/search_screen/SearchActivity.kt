@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oleg.ivanov.test3205team.R
-import com.oleg.ivanov.test3205team.app.AppSettings
+import com.oleg.ivanov.data.AppSettings
 import com.oleg.ivanov.test3205team.app.MyApplication
 import com.oleg.ivanov.test3205team.databinding.ActivitySearchBinding
 import com.oleg.ivanov.test3205team.presentation.adapters.RepositoryListAdapter

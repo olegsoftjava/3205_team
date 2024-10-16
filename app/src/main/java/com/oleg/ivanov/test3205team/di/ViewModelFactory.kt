@@ -2,6 +2,7 @@ package com.oleg.ivanov.test3205team.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.oleg.ivanov.data.di.ApplicationScope
 import javax.inject.Inject
 import javax.inject.Provider
 
