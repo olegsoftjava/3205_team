@@ -3,7 +3,7 @@ package com.oleg.ivanov.test3205team.presentation.search_screen.view_model
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.oleg.ivanov.test3205team.domain.data.RepositoryNetworkAndLoadedResultModel
-import com.oleg.ivanov.test3205team.domain.usecase.RepositoryUseCase
+import com.oleg.ivanov.test3205team.domain.usecase.LoadListRepositoryUseCase
 import com.oleg.ivanov.test3205team.repository.model.ErrorModel
 import com.oleg.ivanov.test3205team.repository.provider.ProviderDownloader
 import kotlinx.coroutines.flow.Flow
@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class SearchViewModelImpl @Inject constructor(
-    private val repositoryUseCase: RepositoryUseCase,
+    private val loadListRepositoryUseCase: LoadListRepositoryUseCase,
     private val providerDownloader: ProviderDownloader
 ) : ViewModel(), SearchViewModel {
     private val _viewState = MutableSharedFlow<SearchViewState>()
@@ -30,7 +30,7 @@ class SearchViewModelImpl @Inject constructor(
     override fun search(userName: String) {
         viewModelScope.launch {
             _viewState.emit(SearchViewState.SearchStartLoad)
-            when (val resultSearch = repositoryUseCase.execute(userName)) {
+            when (val resultSearch = loadListRepositoryUseCase.execute(userName)) {
                 is RepositoryNetworkAndLoadedResultModel.DataOK -> {
                     _viewState.emit(
                         SearchViewState.SearchData(

@@ -9,8 +9,8 @@ import android.net.Uri
 import android.os.Environment
 import android.util.Log
 import com.oleg.ivanov.test3205team.app.MyApplication
+import com.oleg.ivanov.test3205team.domain.data.DownloadLinkAndFile
 import com.oleg.ivanov.test3205team.repository.database.DatabaseProvider
-import com.oleg.ivanov.test3205team.repository.database.DownloadLinkAndFile
 import com.oleg.ivanov.test3205team.repository.provider.ProviderDownloader
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

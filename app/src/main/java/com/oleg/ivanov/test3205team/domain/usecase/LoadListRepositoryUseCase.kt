@@ -8,7 +8,7 @@ import com.oleg.ivanov.test3205team.repository.database.DatabaseProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class RepositoryUseCase(
+class LoadListRepositoryUseCase(
     private val repositoryData: RepositoryData,
     private val databaseProvider: DatabaseProvider
 ) {

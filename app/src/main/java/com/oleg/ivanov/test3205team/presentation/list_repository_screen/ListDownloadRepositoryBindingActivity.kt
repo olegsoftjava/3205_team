@@ -6,11 +6,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oleg.ivanov.test3205team.app.MyApplication
 import com.oleg.ivanov.test3205team.databinding.ActivityListDownloadRepositoryBinding
+import com.oleg.ivanov.test3205team.domain.data.DownloadLinkAndFile
 import com.oleg.ivanov.test3205team.presentation.adapters.DownloadRepositoryListAdapter
 import com.oleg.ivanov.test3205team.presentation.base.BaseActivity
 import com.oleg.ivanov.test3205team.presentation.list_repository_screen.view_model.ListLoadedRepositoryViewModelImpl
 import com.oleg.ivanov.test3205team.presentation.list_repository_screen.view_model.ListLoadedRepositoryViewState
-import com.oleg.ivanov.test3205team.repository.database.DownloadLinkAndFile
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

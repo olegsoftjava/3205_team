@@ -1,4 +1,4 @@
-package com.oleg.ivanov.test3205team.repository.database
+package com.oleg.ivanov.test3205team.domain.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.oleg.ivanov.test3205team.R
 import com.oleg.ivanov.test3205team.databinding.ItemDownloadRepositoryBinding
-import com.oleg.ivanov.test3205team.repository.database.DownloadLinkAndFile
+import com.oleg.ivanov.test3205team.domain.data.DownloadLinkAndFile
 
 class DownloadRepositoryListAdapter(
     private val dataSource: List<DownloadLinkAndFile>,
