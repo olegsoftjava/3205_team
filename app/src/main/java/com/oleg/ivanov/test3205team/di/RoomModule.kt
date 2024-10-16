@@ -7,14 +7,16 @@ import dagger.Module
 import dagger.Provides
 
 @Module(
-    includes = [
-        RoomModule::class
-    ]
+    includes = []
 )
-class AppModule(private val contextApp: Context) {
+class RoomModule(private val context: Context) {
 
     @ApplicationScope
     @Provides
-    fun provideContext() = contextApp
+    fun appDatabase() = AppRoomDatabase.getDataBase(context)
+
+    @ApplicationScope
+    @Provides
+    fun databaseProvider() = DatabaseProvider(appDatabase())
 
 }

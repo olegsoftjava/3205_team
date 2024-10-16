@@ -29,6 +29,7 @@ interface ApplicationComponent {
     @Component.Builder
     interface Builder {
         fun appModule(appModule: AppModule): Builder
+        fun roomModule(roomModule: RoomModule): Builder
         fun build(): ApplicationComponent
     }
 }
