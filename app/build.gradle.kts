@@ -56,6 +56,10 @@ dependencies {
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
 
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
     // lifecycle
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
 

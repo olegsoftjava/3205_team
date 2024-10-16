@@ -61,6 +61,8 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding
             getString(R.string.info), getString(R.string.info_description)
         )
 
+        binding.editTextUserName.setText("olegsoftjava")
+
     }
 
     private fun initRecyclerView() {
@@ -111,7 +113,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding
 
     @SuppressLint("NotifyDataSetChanged")
     private fun updateRecyclerViewList(
-        list: List<com.oleg.ivanov.domain.domain.data.GitHubRepoModel>?,
+        list: List<com.oleg.ivanov.domain.domain.data.GitHubRepoModelDomain>?,
         linkList: List<String>?
     ) {
         binding.recyclerViewResult.adapter =
@@ -119,7 +121,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding
                 fileDownloader.download(
                     uri = it.htmlUrl + AppSettings.PART_URL_FOR_DOWNLOAD,
                     fileName = it.nameRepository,
-                    userName = it.owner.userName,
+                    userName = it.owner?.userName?:"",
                     repositoryName = it.nameRepository
                 )
             }.apply {

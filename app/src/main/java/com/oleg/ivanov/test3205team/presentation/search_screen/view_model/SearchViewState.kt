@@ -3,7 +3,7 @@ package com.oleg.ivanov.test3205team.presentation.search_screen.view_model
 sealed class SearchViewState {
     internal data class DownloadData(val link: String?) : SearchViewState()
     internal data class SearchData(
-        val list: List<com.oleg.ivanov.domain.domain.data.GitHubRepoModel>?,
+        val list: List<com.oleg.ivanov.domain.domain.data.GitHubRepoModelDomain>?,
         val loadedLinks: List<String>?
     ) : SearchViewState()
 

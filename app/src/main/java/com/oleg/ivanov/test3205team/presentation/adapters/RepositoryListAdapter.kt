@@ -10,8 +10,8 @@ import com.oleg.ivanov.test3205team.databinding.ItemRepositoryBinding
 import com.oleg.ivanov.test3205team.presentation.ext_ui.animateUpDown
 
 class RepositoryListAdapter(
-    private val dataSource: List<com.oleg.ivanov.domain.domain.data.GitHubRepoModel>,
-    private val click: (gitHubRepoModel: com.oleg.ivanov.domain.domain.data.GitHubRepoModel) -> Unit
+    private val dataSource: List<com.oleg.ivanov.domain.domain.data.GitHubRepoModelDomain>,
+    private val click: (gitHubRepoModelDomain: com.oleg.ivanov.domain.domain.data.GitHubRepoModelDomain) -> Unit
 ) : RecyclerView.Adapter<RepositoryListAdapter.MessageViewHolder>() {
 
     private var linkList: MutableList<String>? = null
