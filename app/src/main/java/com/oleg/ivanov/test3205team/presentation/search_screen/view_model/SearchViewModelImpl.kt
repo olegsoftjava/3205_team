@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.oleg.ivanov.test3205team.domain.data.RepositoryNetworkAndLoadedResultModel
 import com.oleg.ivanov.test3205team.domain.usecase.RepositoryUseCase
-import com.oleg.ivanov.test3205team.repository.database.DatabaseProvider
 import com.oleg.ivanov.test3205team.repository.model.ErrorModel
 import com.oleg.ivanov.test3205team.repository.provider.ProviderDownloader
 import kotlinx.coroutines.flow.Flow
@@ -14,7 +13,6 @@ import javax.inject.Inject
 
 class SearchViewModelImpl @Inject constructor(
     private val repositoryUseCase: RepositoryUseCase,
-    private val databaseProvider: DatabaseProvider,
     private val providerDownloader: ProviderDownloader
 ) : ViewModel(), SearchViewModel {
     private val _viewState = MutableSharedFlow<SearchViewState>()
