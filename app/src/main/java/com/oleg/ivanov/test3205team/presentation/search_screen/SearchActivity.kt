@@ -30,6 +30,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
+/**
+ *
+ */
 class SearchActivity : BaseActivity<ActivitySearchBinding>(ActivitySearchBinding::inflate) {
 
     private val fileDownloader by lazy { FileDownloader(this, {}, {}, null) }
